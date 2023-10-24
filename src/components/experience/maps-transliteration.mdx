@@ -1,0 +1,26 @@
+import Image from "next/image";
+
+# **Google Maps for India**
+
+## Transliterating POIs into the top 10 Indian languages 
+
+<div
+  className="w-full flex justify-center items-center relative"
+  style={{ background: "#000000" }}
+>
+  <Image
+    src="/images/resume/maps-search-failure.png"
+    layout="intrinsic"
+    width={1240}
+    height={760}
+  />
+</div>
+
+A significant amount of the Indian population can speak and understand English but not read or write in the language. 
+Maps' search queries were failing as users searched for English words in their local language script. 
+
+I worked with a research scientist to build a transliteration model from English to the top 10 Indian languages.
+After rigorous quality testing, we added millions of transliterated POI names to the Maps database, thereby bringing up
+the coverage of local language names in India from 5% to over 95%.
+
+Want to learn more about this project? Check out this *[blog post](https://blog.google/intl/en-in/company-news/inside-google/improving-indian-language/)* I wrote for the Google AI blog. 

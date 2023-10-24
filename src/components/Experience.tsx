@@ -6,10 +6,10 @@ export default function Experience() {
   return (
     <>
       <ExperienceCard
-        name="Appcubator"
-        imageUrl="/images/resume/appcubator.png"
+        name="Google Maps for India"
+        imageUrl="/images/resume/maps-india.png"
       >
-        <MDXComponent importedModule={import("./experience/appcubator.mdx")} />
+        <MDXComponent importedModule={import("./experience/maps-transliteration.mdx")} />
       </ExperienceCard>
 
       <ExperienceCard

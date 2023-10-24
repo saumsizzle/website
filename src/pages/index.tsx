@@ -8,7 +8,7 @@ export function Home() {
   return (
     <Layout className="px-8">
       <Head>
-        <title>Abhishek Chadha - Blog, Website and more</title>
+        <title>Saumya Dalal - Personal Website and more</title>
       </Head>
       <div className="w-full min-h-screen flex justify-center items-center flex-col">
         <AnimatePresence mode={"wait"}>
@@ -22,9 +22,9 @@ export function Home() {
               <h1>
                 Hey there!{" "}
                 <b className="whitespace-nowrap">
-                  <span className="font-normal">{"I'm"}</span> Abhishek
+                  <span className="font-normal">{"I'm"}</span> Saumya
                 </b>
-                . <br /> I design and build software products.
+                . <br /> I design, build, and grow tech products.
               </h1>
             </motion.div>
             <motion.div
