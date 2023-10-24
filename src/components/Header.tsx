@@ -15,7 +15,7 @@ function Header({ position }: any) {
           onClick={() => router.push("/")}
           className="cursor-pointer"
           src="/images/logo.svg"
-          alt="AC"
+          alt="SD"
           height={40}
           width={40}
         />
