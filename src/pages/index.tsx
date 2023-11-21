@@ -1,5 +1,6 @@
 import ContactDetails from "@/components/ContactDetails";
 import Experience from "@/components/Experience";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
 import Layout from "@/components/Layout";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
@@ -38,9 +39,10 @@ export function Home() {
       </div>
       <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
         <h3>
-          Over the last 7 years, {"I've"} been fortunate enough to travel around
-          the world and work on a variety of products with world-class teams.
+          Over the last 8 years, {"I've"} been fortunate enough to work across
+          several industries in tech and build products with world-class teams.
         </h3>
+        <ExperienceTimeline />
         <div className="w-full grid lg:grid-cols-3 gap-4 grid-cols-2">
           <Experience />
         </div>

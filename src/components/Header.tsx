@@ -16,8 +16,8 @@ function Header({ position }: any) {
           className="cursor-pointer"
           src="/images/logo.svg"
           alt="SD"
-          height={40}
-          width={40}
+          height={148}
+          width={148}
         />
         <div className="w-full flex flex-row justify-evenly max-w-sm mx-auto">
           <Link href="/">
