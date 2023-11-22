@@ -37,7 +37,7 @@ export default function Experience() {
       </ExperienceCard>
 
       <ExperienceCard
-        name="CryptoKitties"
+        name="E-Commerce Order Management"
         imageUrl="/images/resume/a120-logo.jpeg"
       >
         <MDXComponent
@@ -45,7 +45,7 @@ export default function Experience() {
         />
       </ExperienceCard>
 
-      <ExperienceCard name="ZeroDown" imageUrl="/images/resume/ku-logo.jpeg">
+      <ExperienceCard name="Driving Sign-ups" imageUrl="/images/resume/ku-logo.jpeg">
         <MDXComponent importedModule={import("./experience/zerodown.mdx")} />
       </ExperienceCard>
     </>

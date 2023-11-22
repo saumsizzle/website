@@ -10,6 +10,9 @@ import SchoolIcon from '@mui/icons-material/School';
 import GoogleIcon from '@mui/icons-material/Google';
 import PlaceIcon from '@mui/icons-material/Place';
 import BookIcon from '@mui/icons-material/AutoStories';
+import GameIcon from '@mui/icons-material/SportsEsports';
+import HomeIcon from '@mui/icons-material/Home';
+
 import Typography from '@mui/material/Typography';
 // import P5Sketch from './P5Sketch';
 
@@ -73,10 +76,18 @@ export default function ExperienceTimeline() {
                     <Typography variant="h6" component="span">
                         Coded at Google
                     </Typography>
-                    <Typography>Worked at Google as a software engineer on the AdMob team</Typography>
+                    <Typography>Worked at Google as a software engineer on the AdMob team and a startup in the Area 120 incubator</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    align="right"
+                    variant="body2"
+                    color="primary"
+                >
+                    2019
+                </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
                     <TimelineDot color="primary" variant="outlined">
@@ -92,6 +103,14 @@ export default function ExperienceTimeline() {
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    align="right"
+                    variant="body2"
+                    color="primary"
+                >
+                    2021
+                </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     <TimelineDot color="primary" variant="outlined">
@@ -101,9 +120,55 @@ export default function ExperienceTimeline() {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
                     <Typography variant="h6" component="span">
-                        Repeat
+                        Pursued my ed tech dreams
                     </Typography>
-                    <Typography>Because this is the life you love!</Typography>
+                    <Typography>Joined Google Classroom to build our first set of features for school leaders</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    align="right"
+                    variant="body2"
+                    color="primary"
+                >
+                    2022
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineDot color="primary" variant="outlined">
+                        <GameIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        Left Google for a new challenge
+                    </Typography>
+                    <Typography>Worked for my first startup, Synthesis, to teach kids soft skills through games</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    align="right"
+                    variant="body2"
+                    color="primary"
+                >
+                    2023
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineDot color="primary" variant="outlined">
+                        <HomeIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        Moved back to India
+                    </Typography>
+                    <Typography>Moved back home to Mumbai, India. Consulted with US ed tech companies on growing in India.</Typography>
                 </TimelineContent>
             </TimelineItem>
             {/* <div style={sketchContainerStyle}>
