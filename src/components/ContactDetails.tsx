@@ -49,42 +49,6 @@ function ContactDetails() {
       })}
     </>
   );
-  return (
-    <>
-      <a
-        href="https://www.linkedin.com/in/abhishek-chadha-53b09364/"
-        target="_blank"
-        className="no-underline outline-none"
-      >
-        <span className="px-4">
-          <LinkedInIcon /> LinkedIn
-        </span>
-      </a>
-      <a
-        href="http://github.com/achadha235"
-        target="_blank"
-        className="no-underline outline-none"
-      >
-        <span className="px-4">
-          <GitHubIcon /> GitHub
-        </span>
-      </a>
-      <a
-        href="http://twitter.com/achadha235"
-        target="_blank"
-        className="no-underline outline-none"
-      >
-        <span className="px-4">
-          <TwitterIcon /> Twitter
-        </span>
-      </a>
-      <a ref={linkRef as any} className="no-underline outline-none">
-        <span className="px-4">
-          <MailIcon /> Email
-        </span>
-      </a>
-    </>
-  );
 }
 
 export default ContactDetails;

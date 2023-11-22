@@ -11,8 +11,24 @@ import GoogleIcon from '@mui/icons-material/Google';
 import PlaceIcon from '@mui/icons-material/Place';
 import BookIcon from '@mui/icons-material/AutoStories';
 import Typography from '@mui/material/Typography';
+// import P5Sketch from './P5Sketch';
 
 export default function ExperienceTimeline() {
+    const sketchContainerStyle = {
+        position: 'relative',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, 50%)',
+        backgroundColor: 'black',
+        width: '50vw',
+        height: '50vh'
+    };
+    const sketchStyle = {
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)'
+    }
     return (
         <Timeline position="alternate">
             <TimelineItem>
@@ -57,7 +73,7 @@ export default function ExperienceTimeline() {
                     <Typography variant="h6" component="span">
                         Coded at Google
                     </Typography>
-                    <Typography>Joined Google as a software engineer on the AdMob team</Typography>
+                    <Typography>Worked at Google as a software engineer on the AdMob team</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -70,9 +86,9 @@ export default function ExperienceTimeline() {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
                     <Typography variant="h6" component="span">
-                        Skill building
+                        Moved to Product
                     </Typography>
-                    <Typography>Joined an e-commerce startup in Area 120</Typography>
+                    <Typography>Became a Product Manager on Google Maps, led projects driving revenue & growth</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -90,6 +106,12 @@ export default function ExperienceTimeline() {
                     <Typography>Because this is the life you love!</Typography>
                 </TimelineContent>
             </TimelineItem>
+            {/* <div style={sketchContainerStyle}>
+                <div style={sketchStyle}>
+                    <P5Sketch></P5Sketch>
+                </div>
+            </div> */}
+
         </Timeline>
     );
 }

@@ -7,8 +7,8 @@ export default function Experience() {
   return (
     <>
       <ExperienceCard
-        name="Google Classroom"
-        imageUrl="/images/resume/clever-roster-import.png"
+        name="Building for school leaders"
+        imageUrl="/images/resume/classroom-logo-users.jpeg"
       >
         <MDXComponent
           importedModule={import("./experience/classroom.mdx")}
@@ -16,36 +16,36 @@ export default function Experience() {
       </ExperienceCard>
 
       <ExperienceCard
-        name="Google Maps - Growth"
-        imageUrl="/images/resume/maps-india.png"
+        name="Transliterating POIs"
+        imageUrl="/images/resume/maps-logo-users.jpeg"
       >
         <MDXComponent importedModule={import("./experience/maps-transliteration.mdx")} />
       </ExperienceCard>
 
       <ExperienceCard
-        name="Google Maps - Revenue"
-        imageUrl="/images/resume/search-affiliate-location-extensions-google.jpeg"
+        name="Chain Data for Ads"
+        imageUrl="/images/resume/maps-logo-revenue.jpeg"
       >
         <MDXComponent importedModule={import("./experience/maps-revenue.mdx")} />
       </ExperienceCard>
 
       <ExperienceCard
-        name="CarnegieBot"
-        imageUrl="/images/resume/carnegiebot.png"
+        name="Re-engagement notis"
+        imageUrl="/images/resume/maps-logo-retain.jpeg"
       >
-        <MDXComponent importedModule={import("./experience/carnegiebot.mdx")} />
+        <MDXComponent importedModule={import("./experience/maps-reengage.mdx")} />
       </ExperienceCard>
 
       <ExperienceCard
         name="CryptoKitties"
-        imageUrl="/images/resume/cryptokitties.png"
+        imageUrl="/images/resume/a120-logo.jpeg"
       >
         <MDXComponent
           importedModule={import("./experience/cryptokitties.mdx")}
         />
       </ExperienceCard>
 
-      <ExperienceCard name="ZeroDown" imageUrl="/images/resume/zerodown.jpg">
+      <ExperienceCard name="ZeroDown" imageUrl="/images/resume/ku-logo.jpeg">
         <MDXComponent importedModule={import("./experience/zerodown.mdx")} />
       </ExperienceCard>
     </>
