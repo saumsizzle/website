@@ -41,12 +41,12 @@ export default function Experience() {
         imageUrl="/images/resume/a120-logo.jpeg"
       >
         <MDXComponent
-          importedModule={import("./experience/cryptokitties.mdx")}
+          importedModule={import("./experience/tailor.mdx")}
         />
       </ExperienceCard>
 
       <ExperienceCard name="Driving Sign-ups" imageUrl="/images/resume/ku-logo.jpeg">
-        <MDXComponent importedModule={import("./experience/zerodown.mdx")} />
+        <MDXComponent importedModule={import("./experience/amazon.mdx")} />
       </ExperienceCard>
     </>
   );

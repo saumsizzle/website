@@ -11,7 +11,6 @@ export function Home() {
       <Head>
         <title>Saumya Dalal - Personal Website and more</title>
       </Head>
-      <script src="https://cdn.jsdelivr.net/npm/p5@1.8.0/lib/p5.js"></script>
       <div className="w-full min-h-screen flex justify-center items-center flex-col">
         <AnimatePresence mode={"wait"}>
           <motion.div
@@ -26,7 +25,7 @@ export function Home() {
                 <b className="whitespace-nowrap">
                   <span className="font-normal">{"I'm"}</span> Saumya
                 </b>
-                . <br /> I help tech products retain and grow their revenue and.
+                . <br /> I help tech products retain and grow their revenue and users.
               </h1>
             </motion.div>
             <motion.div
@@ -41,7 +40,7 @@ export function Home() {
       <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
         <h3>
           Over the last 8 years, {"I've"} been fortunate enough to work across
-          several industries in tech and build products with world-class teams.
+          several industries in tech and build products at the world's best companies.
         </h3>
         <div className="w-full grid lg:grid-cols-3 gap-4 grid-cols-2">
           <Experience />

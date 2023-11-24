@@ -14,24 +14,9 @@ import GameIcon from '@mui/icons-material/SportsEsports';
 import HomeIcon from '@mui/icons-material/Home';
 
 import Typography from '@mui/material/Typography';
-// import P5Sketch from './P5Sketch';
+import P5Sketch from './P5Sketch';
 
 export default function ExperienceTimeline() {
-    const sketchContainerStyle = {
-        position: 'relative',
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, 50%)',
-        backgroundColor: 'black',
-        width: '50vw',
-        height: '50vh'
-    };
-    const sketchStyle = {
-        position: 'absolute',
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, -50%)'
-    }
     return (
         <Timeline position="alternate">
             <TimelineItem>
@@ -171,12 +156,8 @@ export default function ExperienceTimeline() {
                     <Typography>Moved back home to Mumbai, India. Consulted with US ed tech companies on growing in India.</Typography>
                 </TimelineContent>
             </TimelineItem>
-            {/* <div style={sketchContainerStyle}>
-                <div style={sketchStyle}>
-                    <P5Sketch></P5Sketch>
-                </div>
-            </div> */}
-
+            {/* Component for embedding a P5 sketch */}
+            {/* <P5Sketch></P5Sketch> */}
         </Timeline>
     );
 }

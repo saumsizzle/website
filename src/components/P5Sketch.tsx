@@ -1,24 +1,31 @@
-import React from 'react';
-import Sketch from 'react-p5';
+"use client"
+import React, { useEffect, useState } from 'react';
+import { type Sketch } from "@p5-wrapper/react";
+// import { NextReactP5Wrapper } from "@p5-wrapper/next";
+import dynamic from 'next/dynamic'
+
+const NextReactP5Wrapper = dynamic(() => import('@p5-wrapper/next').then((mod) => mod.NextReactP5Wrapper), {
+    ssr: false,
+})
+
+const sketch: Sketch = p5 => {
+    p5.setup = () => p5.createCanvas(600, 400, p5.WEBGL);
+
+    p5.draw = () => {
+        p5.background(250);
+        p5.normalMaterial();
+        p5.push();
+        p5.rotateZ(p5.frameCount * 0.01);
+        p5.rotateX(p5.frameCount * 0.01);
+        p5.rotateY(p5.frameCount * 0.01);
+        p5.plane(100);
+        p5.pop();
+    };
+};
 
 function P5Sketch() {
-    const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(400, 400).parent(canvasParentRef)
-    }
-
-    const draw = (p5) => {
-        p5.stroke(172, 203, 255);
-        if (p5.mouseIsPressed) {
-            p5.fill(172, 203, 255);
-        } else {
-            p5.fill(255);
-        }
-        p5.ellipse(p5.mouseX, p5.mouseY, 80, 80);
-
-    }
-
     return (
-        <Sketch setup={setup} draw={draw} />
+        <NextReactP5Wrapper sketch={sketch} />
     )
 }
 

@@ -11,8 +11,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: "#0D0D0D",
-        white: "#F2F2F2",
+        black: "#002b36",
+        white: "#fdf6e3",
         indigo: {
           100: "#ebf4ff",
           200: "#c3dafe",
@@ -24,6 +24,12 @@ module.exports = {
           800: "#434190",
           900: "#3c366b",
         },
+        purp: {
+          100: "#FAF0E6",
+          200: "#B9B4C7",
+          300: "#5C5470",
+          400: "#352F44"
+        }
       },
     },
   },
