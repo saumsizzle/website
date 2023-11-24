@@ -17,7 +17,7 @@ export default function ExperienceCard({ children, imageUrl, name }) {
 
   return (
     <div className="container h-40 p-2 pb-0 pl-0 pr-0 pt-0 flex flex-col justify-end items-center hover:scale-105 transform ease-in-out transition-transform duration-75 cursor-pointer overflow-hidden rounded-sm ">
-      <div className="w-full h-full" />
+      <div className="w-full h-full bg-cyan-800" />
       <Image
         fill
         sizes="100vw"
@@ -42,7 +42,7 @@ export default function ExperienceCard({ children, imageUrl, name }) {
         closeAfterTransition
       >
         <Fade in={open}>
-          <Paper className="max-w-2xl w-full mx-auto px-8 h-screen bg-black text-white outline-none overflow-scroll rounded-none">
+          <Paper className="max-w-2xl w-full mx-auto px-8 h-screen bg-cyan-900 text-orange-100 outline-none overflow-scroll rounded-none">
             <div className="w-full flex justify-end">
               <CloseIcon className="ml-auto" onClick={handleClose} />
             </div>
