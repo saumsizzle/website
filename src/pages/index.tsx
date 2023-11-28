@@ -25,7 +25,7 @@ export function Home() {
                 <b className="whitespace-nowrap">
                   <span className="font-normal">{"I'm"}</span> Saumya
                 </b>
-                . <br /> I help tech products retain and grow their revenue and users.
+                . <br /> I'm a fullstack product leader who has designed, built, and grown software products that have touched millions of users and made billions of dollars.
               </h1>
             </motion.div>
             <motion.div

@@ -128,7 +128,7 @@ export default function ExperienceTimeline() {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
                     <Typography variant="h6" component="span">
-                        Left Google for a new challenge
+                        Joined the startup world
                     </Typography>
                     <Typography>Worked for my first startup, Synthesis, to teach kids soft skills through games</Typography>
                 </TimelineContent>
