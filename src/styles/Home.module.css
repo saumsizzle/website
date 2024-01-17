@@ -72,11 +72,6 @@
   max-width: 30ch;
 }
 
-.card-bg {
-  background-color: black;
-  color: white;
-}
-
 .center {
   display: flex;
   justify-content: center;
