@@ -19,7 +19,7 @@ function Layout({ children, headerPosition, className }: LayoutProps) {
       className={` h-full w-full overflow-x-hidden justify-center ${className}`}
     >
       <NextNprogress
-        color="#29D"
+        color="#6fffb1"
         startPosition={0.3}
         stopDelayMs={200}
         height={3}
