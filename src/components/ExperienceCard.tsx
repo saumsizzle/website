@@ -17,7 +17,7 @@ export default function ExperienceCard({ children, imageUrl, name }) {
 
   return (
     <div className="container h-40 p-2 pb-0 pl-0 pr-0 pt-0 flex flex-col justify-end items-center hover:scale-105 transform ease-in-out transition-transform duration-75 cursor-pointer overflow-hidden rounded-sm ">
-      <div className="w-full h-full" />
+      <div className="w-full h-full bg-white" />
       <Image
         fill
         sizes="100vw"
