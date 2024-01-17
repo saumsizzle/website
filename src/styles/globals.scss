@@ -18,7 +18,7 @@
 
 html {
   font-family: 'Inter';
-  color: #fdf6e3;
+  color: white;
   font-size: 14px;
 
   @media (min-width: theme('screens.sm')) {
@@ -40,12 +40,12 @@ html {
 
 ::-moz-selection {
   background: #859900;
-  color: #002b36;
+  color: black;
 }
 
 ::selection {
   background: #859900;
-  color: #002b36;
+  color: black;
 }
 
 .murdered-out-black-gradient {
@@ -74,7 +74,7 @@ hr {
 }
 
 h1 {
-  @apply text-4xl tracking-tight leading-tight;
+  @apply text-3xl tracking-tight leading-tight;
 }
 
 h2 {
