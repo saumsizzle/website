@@ -109,6 +109,10 @@
   position: relative;
 }
 
+.logos {
+  padding-bottom: 120px;
+}
+
 .thirteen {
   display: flex;
   justify-content: center;

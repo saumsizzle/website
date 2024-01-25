@@ -1,7 +1,9 @@
 import ContactDetails from "@/components/ContactDetails";
 import Experience from "@/components/Experience";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
+import Logos from "@/components/Logos";
 import Layout from "@/components/Layout";
+import Services from "@/components/Services";
 import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 
@@ -37,7 +39,16 @@ export function Home() {
           </motion.div>
         </AnimatePresence>
       </div>
+      <Logos />
       <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
+        <h3>
+          Over the last 8 years, {"I've"} been fortunate enough to work across
+          several industries in tech and build products at the world's best companies.
+          I have helped these companies with:
+        </h3>
+        <Services />
+      </div>
+      {/* <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
         <h3>
           Over the last 8 years, {"I've"} been fortunate enough to work across
           several industries in tech and build products at the world's best companies.
@@ -45,7 +56,7 @@ export function Home() {
         <div className="w-full grid lg:grid-cols-3 gap-4 grid-cols-2">
           <Experience />
         </div>
-      </div>
+      </div> */}
 
       <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
         <ExperienceTimeline />
