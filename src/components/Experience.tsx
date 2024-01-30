@@ -1,7 +1,6 @@
 import { useState } from "react";
 import ExperienceCard from "./ExperienceCard";
 import MDXComponent from "./MDXComponent";
-import ExperienceTimeline from "./ExperienceTimeline";
 
 export default function Experience() {
   return (

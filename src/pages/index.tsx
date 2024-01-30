@@ -59,7 +59,7 @@ export function Home() {
         </div>
       </div> */}
 
-      <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
+      <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10 pb-16">
         <ExperienceTimeline />
       </div>
 
