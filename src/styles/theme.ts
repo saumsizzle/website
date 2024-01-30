@@ -3,7 +3,7 @@ import tailwindConfigJSON from "../../tailwind.config";
 import resolveConfig from "tailwindcss/resolveConfig";
 
 const fontFamily =
-  'Inter, -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", "Satori", "Melodrama", sans-serif';
+  'Inter, -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
 
 const tailwindConfig = resolveConfig(tailwindConfigJSON);
 const colors: any = tailwindConfig.theme?.colors;
@@ -18,9 +18,9 @@ export const theme = createTheme({
     },
 
     secondary: {
-      light: defaultColor,
-      main: defaultColor,
-      dark: defaultColor,
+      light: colors.indigo[400],
+      main: colors.indigo[400],
+      dark: colors.indigo[400],
       contrastText: defaultColor,
     },
   },

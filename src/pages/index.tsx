@@ -5,6 +5,7 @@ import Logos from "@/components/Logos";
 import Layout from "@/components/Layout";
 import Services from "@/components/Services";
 import { AnimatePresence, motion } from "framer-motion";
+import Button from '@mui/material/Button';
 import Head from "next/head";
 
 export function Home() {
@@ -61,7 +62,15 @@ export function Home() {
       <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
         <ExperienceTimeline />
       </div>
-    </Layout>
+
+      <div className="fixed bottom-0 right-0 p-8">
+        <Button color="secondary" variant="contained" size="large"
+          onClick={() => { window.open('https://calendly.com/saumyadalal', '_blank')?.focus(); }}>
+          Schedule time with me
+        </Button>
+      </div>
+
+    </Layout >
   );
 }
 

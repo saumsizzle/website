@@ -78,7 +78,7 @@ export default function ExperienceTimeline() {
                     <TimelineDot color="primary" variant="outlined">
                         <PlaceIcon />
                     </TimelineDot>
-                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
                     <Typography variant="h6" component="span">
@@ -97,7 +97,7 @@ export default function ExperienceTimeline() {
                     2021
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineConnector />
                     <TimelineDot color="primary" variant="outlined">
                         <BookIcon />
                     </TimelineDot>
@@ -120,7 +120,7 @@ export default function ExperienceTimeline() {
                     2022
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineConnector />
                     <TimelineDot color="primary" variant="outlined">
                         <GameIcon />
                     </TimelineDot>
@@ -143,7 +143,7 @@ export default function ExperienceTimeline() {
                     2023
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineConnector />
                     <TimelineDot color="primary" variant="outlined">
                         <HomeIcon />
                     </TimelineDot>
