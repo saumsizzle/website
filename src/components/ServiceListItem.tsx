@@ -26,7 +26,7 @@ export default function ServiceItemList({ children, name, icon }) {
             <List>
                 <ListItem disablePadding>
                     <ListItemButton onClick={handleOpen}>
-                        <ListItemIcon loading="eager">
+                        <ListItemIcon>
                             {icon}
                         </ListItemIcon>
                         {name}
