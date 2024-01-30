@@ -47,7 +47,7 @@ export function Home() {
           several industries in tech and build products at the world's best companies.
           I have helped these companies with:
         </h3>
-        <Services className="w-full" />
+        <Services />
       </div>
       {/* <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
         <h3>
