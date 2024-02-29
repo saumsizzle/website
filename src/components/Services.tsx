@@ -43,7 +43,7 @@ export default function Services() {
                         <MDXComponent importedModule={import("./experience/maps-transliteration.mdx")} />
                     </ServiceListItem>
                     <ServiceListItem name="Spearheading ClassDojo's India growth strategy" icon={<TrendingUpIcon />}>
-                        <MDXComponent importedModule={import("./experience/amazon.mdx")} />
+                        <MDXComponent importedModule={import("./experience/classdojo.mdx")} />
                     </ServiceListItem>
                     <ServiceListItem name="Growing sign-ups for Kindle Unlimited by 30%" icon={<AutoStoriesIcon />}>
                         <MDXComponent importedModule={import("./experience/amazon.mdx")} />

@@ -24,7 +24,7 @@ export function Home() {
           >
             <motion.div variants={item}>
               <h1>
-                Hey there!{" "}
+                Hi!{" "}
                 <b className="whitespace-nowrap">
                   <span className="font-normal">{"I'm"}</span> Saumya
                 </b>

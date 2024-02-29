@@ -13,7 +13,7 @@ function BlogHomepage({ blogPosts }) {
   return (
     <Layout className="h-full flex justify-center">
       <Head>
-        <title>All Articles by Abhishek Chadha</title>
+        <title>All Articles by Saumya Dalal</title>
       </Head>
 
       <div className="max-w-2xl w-full mt-20 flex flex-col items-center px-4">
@@ -39,7 +39,7 @@ function BlogHomepage({ blogPosts }) {
               <Chip
                 key={categoryName as string}
                 label={categoryName}
-                onClick={() => {}}
+                onClick={() => { }}
                 variant="outlined"
                 className="m-1"
               />
