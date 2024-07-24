@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,8 +18,10 @@
 }
 
 html {
-  font-family: 'Inter';
-  color: white;
+  background-color: #abb996;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  color: #f2f8e9;
   font-size: 14px;
 
   @media (min-width: theme('screens.sm')) {
@@ -39,18 +42,13 @@ html {
 }
 
 ::-moz-selection {
-  background: #7f9cf5;
-  color: black;
+  background: #afbf34;
+  color: #3e402d;
 }
 
 ::selection {
-  background: #7f9cf5;
-  color: black;
-}
-
-.murdered-out-black-gradient {
-  background: -webkit-linear-gradient(360deg, #030303 10%, #1f1f1f 360%);
-  background: linear-gradient(360deg, #030303 10%, #1f1f1f 360%);
+  background: #afbf34;
+  color: #3e402d;
 }
 
 body {
@@ -112,4 +110,9 @@ p {
       rgba(0, 0, 0, 0.7077205882352942) 41%,
       rgba(0, 0, 0, 0.5284488795518207) 64%,
       rgba(0, 0, 0, 0) 100%);
+}
+
+.competency-list {
+  background-color: #f3ffe0;
+  color: #074020
 }

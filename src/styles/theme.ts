@@ -3,7 +3,7 @@ import tailwindConfigJSON from "../../tailwind.config";
 import resolveConfig from "tailwindcss/resolveConfig";
 
 const fontFamily =
-  'Inter, -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+  '"Bricolage Grotesque", sans-serif';
 
 const tailwindConfig = resolveConfig(tailwindConfigJSON);
 const colors: any = tailwindConfig.theme?.colors;
@@ -18,9 +18,9 @@ export const theme = createTheme({
     },
 
     secondary: {
-      light: colors.indigo[400],
-      main: colors.indigo[400],
-      dark: colors.indigo[400],
+      light: colors.brightgreen,
+      main: colors.mellowgreen,
+      dark: colors.brown,
       contrastText: defaultColor,
     },
   },
@@ -46,7 +46,7 @@ export const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         colorPrimary: {
-          backgroundColor: colors.black,
+          backgroundColor: colors.mellowgreen,
         },
       },
     },

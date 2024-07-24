@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Logos() {
     return (
         <>
-            <div className="w-full flex flex-wrap justify-between gap-10">
+            <div className="logos w-full flex flex-wrap justify-between gap-10">
                 <Image
                     src="/images/logos/classroom-logo.png"
                     alt="Google Classroom"
@@ -26,10 +26,10 @@ export default function Logos() {
                     style={{ objectFit: "contain" }}
                 />
                 <Image
-                    src="/images/logos/synthesis-logo.jpg"
+                    src="/images/logos/synthesis-logo.svg"
                     alt="Synthesis"
                     width={180}
-                    height={37}
+                    height={32}
                     style={{ objectFit: "contain" }}
                 />
                 <Image

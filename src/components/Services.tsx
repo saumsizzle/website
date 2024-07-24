@@ -13,7 +13,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 export default function Services() {
     return (
         <>
-            <Accordion className="w-full">
+            <Accordion className="competency-list w-full">
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1-content"
@@ -30,7 +30,7 @@ export default function Services() {
                     </ServiceListItem>
                 </AccordionDetails>
             </Accordion>
-            <Accordion className="w-full">
+            <Accordion className="competency-list w-full">
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2-content"
@@ -50,7 +50,7 @@ export default function Services() {
                     </ServiceListItem>
                 </AccordionDetails>
             </Accordion>
-            <Accordion className="w-full">
+            <Accordion className="competency-list w-full">
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel3-content"

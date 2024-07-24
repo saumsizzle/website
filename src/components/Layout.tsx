@@ -24,17 +24,6 @@ function Layout({ children, headerPosition, className }: LayoutProps) {
         stopDelayMs={200}
         height={3}
       />
-      <img
-        alt="gradient"
-        src="/images/gradient.svg"
-        className="w-full h-screen"
-        style={{
-          filter: "grayscale(100%) brightness(0.09)",
-          transform: "scale(1.5)",
-          position: "fixed",
-          zIndex: -1,
-        }}
-      />
 
       <AnimatePresence mode={"wait"}>
         <Header position={headerPosition} />
