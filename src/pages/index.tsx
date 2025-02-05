@@ -28,7 +28,8 @@ export function Home() {
                 <b className="whitespace-nowrap">
                   <span className="font-normal">{"I'm"}</span> Saumya
                 </b>
-                . <br /> I'm a fullstack product leader who has built and grown software that has helped millions of users and made billions of dollars.
+                . <br /> I'm a fullstack product leader who has built and grown software that has helped millions of users and made billions of dollars.<br />
+                I'm currently building <a href="https://www.gameaway.in" target="_blank" className="tracking-normal"><i>GameAway</i></a>.
               </h1>
             </motion.div>
             <motion.div

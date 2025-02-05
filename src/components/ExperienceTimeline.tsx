@@ -12,6 +12,8 @@ import PlaceIcon from '@mui/icons-material/Place';
 import BookIcon from '@mui/icons-material/AutoStories';
 import GameIcon from '@mui/icons-material/SportsEsports';
 import HomeIcon from '@mui/icons-material/Home';
+import RocketIcon from '@mui/icons-material/RocketLaunch';
+import PeopleIcon from '@mui/icons-material/People';
 
 import Typography from '@mui/material/Typography';
 import P5Sketch from './P5Sketch';
@@ -154,6 +156,52 @@ export default function ExperienceTimeline() {
                         Moved back to India
                     </Typography>
                     <Typography>Moved back home to Mumbai, India. Consulted with US ed tech companies on growing in India.</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    align="right"
+                    variant="body2"
+                    color="primary"
+                >
+                    2024
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color="primary" variant="outlined">
+                        <PeopleIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        Joined South Park Commons
+                    </Typography>
+                    <Typography>Built AI apps for learning & research, consulted for Alpha Schools</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    align="right"
+                    variant="body2"
+                    color="primary"
+                >
+                    2025
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color="primary" variant="outlined">
+                        <RocketIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        Went full-time on GameAway
+                    </Typography>
+                    <Typography>Building <a href="https://www.gameaway.in" target="_blank">GameAway</a>, a cloud gaming service, with Utkarsh</Typography>
                 </TimelineContent>
             </TimelineItem>
             {/* Component for embedding a P5 sketch */}
