@@ -14,6 +14,7 @@ import GameIcon from '@mui/icons-material/SportsEsports';
 import HomeIcon from '@mui/icons-material/Home';
 import RocketIcon from '@mui/icons-material/RocketLaunch';
 import PeopleIcon from '@mui/icons-material/People';
+import InsightsIcon from '@mui/icons-material/Insights';
 
 import Typography from '@mui/material/Typography';
 import P5Sketch from './P5Sketch';
@@ -155,7 +156,7 @@ export default function ExperienceTimeline() {
                     <Typography variant="h6" component="span">
                         Moved back to India
                     </Typography>
-                    <Typography>Moved back home to Mumbai, India. Consulted with US ed tech companies on growing in India.</Typography>
+                    <Typography>Moved back home to Mumbai, India. Consulted with US ed tech companie (ClassDojo & Alpha Schools) on growth strategy.</Typography>
                 </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -188,7 +189,7 @@ export default function ExperienceTimeline() {
                     variant="body2"
                     color="primary"
                 >
-                    2025
+                    2025 H1
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineConnector />
@@ -199,9 +200,32 @@ export default function ExperienceTimeline() {
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', px: 2 }}>
                     <Typography variant="h6" component="span">
-                        Went full-time on GameAway
+                        Worked full-time on GameAway
                     </Typography>
-                    <Typography>Building <a href="https://www.gameaway.in" target="_blank">GameAway</a>, a cloud gaming service, with Utkarsh</Typography>
+                    <Typography>Built <a href="https://www.gameaway.in" target="_blank">GameAway</a>, a cloud gaming service, with Utkarsh. Now running it passively as a lifestyle business.</Typography>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                <TimelineOppositeContent
+                    sx={{ m: 'auto 0' }}
+                    align="left"
+                    variant="body2"
+                    color="primary"
+                >
+                    2025 H2
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineConnector />
+                    <TimelineDot color="primary" variant="outlined">
+                        <InsightsIcon />
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Typography variant="h6" component="span">
+                        Built a new AI-powered learning tool for myself
+                    </Typography>
+                    <Typography>Launched <a href="https://www.curiousbutadhd.com" target="_blank">FringeThink</a>, to allow curious but ADHD learners to explore complex knowledge sources more effectively. </Typography>
                 </TimelineContent>
             </TimelineItem>
             {/* Component for embedding a P5 sketch */}
