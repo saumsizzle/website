@@ -42,7 +42,7 @@ export default function ExperienceCard({ children, imageUrl, name }) {
         closeAfterTransition
       >
         <Fade in={open}>
-          <Paper className="max-w-2xl w-full mx-auto px-8 h-screen bg-black text-white outline-none overflow-scroll rounded-none">
+          <Paper className="max-w-2xl w-full mx-auto px-8 h-screen bg-[#1F3A2F] text-[#f3f4f6] outline-none overflow-scroll rounded-none">
             <div className="w-full flex justify-end">
               <CloseIcon className="ml-auto" onClick={handleClose} />
             </div>
