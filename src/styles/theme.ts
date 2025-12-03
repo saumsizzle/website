@@ -7,27 +7,28 @@ const fontFamily =
 
 const tailwindConfig = resolveConfig(tailwindConfigJSON);
 const colors: any = tailwindConfig.theme?.colors;
-const defaultColor = colors.white;
+const defaultColor = colors.deepgreen;
+const textColor = colors.white;
 export const theme = createTheme({
   palette: {
     primary: {
       light: defaultColor,
       main: defaultColor,
       dark: defaultColor,
-      contrastText: defaultColor,
+      contrastText: textColor,
     },
 
     secondary: {
       light: colors.brightgreen,
       main: colors.mellowgreen,
       dark: colors.brown,
-      contrastText: defaultColor,
+      contrastText: textColor,
     },
   },
   typography: {
     allVariants: {
       fontFamily,
-      color: defaultColor,
+      color: textColor,
     },
     body1: {
       fontWeight: 400,
@@ -46,7 +47,7 @@ export const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         colorPrimary: {
-          backgroundColor: colors.mellowgreen,
+          backgroundColor: colors.deepgreen,
         },
       },
     },
@@ -57,12 +58,14 @@ export const theme = createTheme({
           cursor: "pointer !important",
           fontSize: "0.65rem",
           fontWeight: 300,
+          color: textColor,
         },
         root: {
           cursor: "pointer !important",
           outline: "none !important",
           fontWeight: 600,
           letterSpacing: 1,
+          color: textColor,
         },
       },
     },
