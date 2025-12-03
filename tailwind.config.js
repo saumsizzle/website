@@ -13,7 +13,8 @@ module.exports = {
     extend: {
       colors: {
         black: "#0D0D0D",
-        white: "#1b6a21",
+        white: "#f3f4f6",
+        deepgreen: "#1F3A2F",
         sage: "#6B8A7A",
         indigo: {
           100: "#ebf4ff",
