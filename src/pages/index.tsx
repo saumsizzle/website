@@ -64,7 +64,7 @@ export function Home() {
         <ExperienceTimeline />
       </div>
 
-      <div className="fixed bottom-0 right-0 p-8">
+      <div className="hidden fixed bottom-0 right-0 p-8">
         <Button color="secondary" variant="contained" size="large"
           onClick={() => { window.open('https://calendly.com/saumyadalal', '_blank')?.focus(); }}>
           Schedule time with me
