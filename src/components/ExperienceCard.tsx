@@ -40,11 +40,12 @@ export default function ExperienceCard({ children, imageUrl, name }) {
         open={open}
         onClose={handleClose}
         closeAfterTransition
+        className="flex items-center justify-center"
       >
         <Fade in={open}>
-          <Paper className="max-w-2xl w-full mx-auto px-8 h-screen bg-[#1F3A2F] text-[#f3f4f6] outline-none overflow-scroll rounded-none">
-            <div className="w-full flex justify-end">
-              <CloseIcon className="ml-auto" onClick={handleClose} />
+          <Paper className="max-w-2xl w-full mx-auto px-8 h-[80vh] bg-[#1F3A2F] text-[#f3f4f6] outline-none overflow-y-auto overflow-x-hidden rounded-none">
+            <div className="w-full flex justify-end pt-4">
+              <CloseIcon className="ml-auto cursor-pointer" onClick={handleClose} />
             </div>
             <div>{children}</div>
           </Paper>
