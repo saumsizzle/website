@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MailIcon from "@mui/icons-material/Mail";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { useRef, useEffect, MutableRefObject } from "react";
 
 function ContactDetails() {
@@ -23,9 +23,9 @@ function ContactDetails() {
       url: "https://www.linkedin.com/in/saumyadalal/",
     },
     {
-      icon: <InstagramIcon />,
-      name: "Instagram",
-      url: "https://instagram.com/saumyadalal",
+      icon: <GitHubIcon />,
+      name: "GitHub",
+      url: "https://github.com/saumsizzle",
     },
     { icon: <MailIcon />, name: "Email", ref: linkRef },
   ];
