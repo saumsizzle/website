@@ -39,6 +39,20 @@ export default function Logos() {
                     height={32}
                     style={{ objectFit: "contain" }}
                 />
+                <Image
+                    src="/images/logos/gameaway-logo.png"
+                    alt="GameAway"
+                    width={220}
+                    height={32}
+                    style={{ objectFit: "contain" }}
+                />
+                <Image
+                    src="/images/logos/alpha-logo.svg"
+                    alt="Alpha Schools"
+                    width={180}
+                    height={24}
+                    style={{ objectFit: "contain" }}
+                />
             </div>
         </>
     );
