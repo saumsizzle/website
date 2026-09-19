@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
+  darkMode: 'class',
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,8 +15,6 @@ module.exports = {
       colors: {
         black: "#0D0D0D",
         white: "#f3f4f6",
-        deepgreen: "#1F3A2F",
-        sage: "#6B8A7A",
         indigo: {
           100: "#ebf4ff",
           200: "#c3dafe",
@@ -27,10 +26,28 @@ module.exports = {
           800: "#434190",
           900: "#3c366b",
         },
-        brightgreen: "#c6d93b",
-        mellowgreen: "#f3ffe0",
-        brown: "#abb996",
-        lightbrown: "#a6998f",
+
+        // Light mode: cute pastels - lavender, periwinkle, cream
+        lavender: "#e6defb",
+        periwinkle: "#c2c5f5",
+        "periwinkle-deep": "#8b8ee0",
+        cream: "#fdfbff",
+        blush: "#f6d6e3",
+        "ink-light": "#3a3454",
+
+        // Dark mode: truly dark, gothic gremlin palette
+        void: "#08070b",
+        "void-deep": "#020103",
+        plum: "#1c1024",
+        blood: "#7a1030",
+        "blood-bright": "#c81e4a",
+        "ink-dark": "#e7def0",
+      },
+      fontFamily: {
+        "dark-title": ["var(--font-title-dark)", "serif"],
+        "dark-body": ["var(--font-body-dark)", "serif"],
+        "light-title": ["var(--font-title-light)", "sans-serif"],
+        "light-body": ["var(--font-body-light)", "sans-serif"],
       },
     },
   },

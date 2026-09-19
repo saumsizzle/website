@@ -5,6 +5,8 @@ import { AppBarProps } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Background from "./Background";
+import Pet from "./Pet/Pet";
+import { useThemeMode } from "@/contexts/ThemeModeContext";
 
 interface LayoutProps {
   children?: any;
@@ -14,12 +16,13 @@ interface LayoutProps {
 
 function Layout({ children, headerPosition, className }: LayoutProps) {
   const router = useRouter();
+  const { mode } = useThemeMode();
   return (
     <div
       className={` h-full w-full overflow-x-hidden justify-center ${className}`}
     >
       <NextNprogress
-        color="#6fffb1"
+        color={mode === "light" ? "#8b8ee0" : "#c81e4a"}
         startPosition={0.3}
         stopDelayMs={200}
         height={3}
@@ -31,6 +34,7 @@ function Layout({ children, headerPosition, className }: LayoutProps) {
           {children}
         </motion.div>
       </AnimatePresence>
+      <Pet />
     </div>
   );
 }

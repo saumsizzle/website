@@ -26,7 +26,8 @@ export function Home() {
               <h1>
                 Hi!{" "}
                 <b className="whitespace-nowrap">
-                  <span className="font-normal">{"I'm"}</span> Saumya
+                  <span className="font-normal">{"I'm"}</span>{" "}
+                  <span className="font-title">Saumya</span>
                 </b>
                 . <br /> I'm a fullstack product leader who has built and grown software that has helped millions of users and made billions of dollars.<br />
                 I'm currently building <a href="https://www.curiousbutadhd.com" target="_blank" className="tracking-normal"><i>FringeThink</i></a>.

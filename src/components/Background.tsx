@@ -1,7 +1,34 @@
-import { Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { useThemeMode } from "@/contexts/ThemeModeContext";
+
+const palettes = {
+  light: {
+    bg: "#fdfbff",
+    rg0: "#c9b6f5", // lavender
+    rg1: "#aeb2ec", // periwinkle
+    rg2: "#f6d6e3", // blush
+    rg3: "#dff0ff", // pale sky
+    hueFrom: 0,
+    hueTo: -25,
+    saturate: 110,
+    blur: 32,
+  },
+  dark: {
+    bg: "#08070b",
+    rg0: "#7a1030", // blood
+    rg1: "#3a0ca3", // deep plum-violet
+    rg2: "#4a0e1f", // dried blood
+    rg3: "#160a1f", // near-black plum
+    hueFrom: 0,
+    hueTo: -15,
+    saturate: 130,
+    blur: 36,
+  },
+};
 
 export default function Background() {
+  const { mode } = useThemeMode();
+  const p = palettes[mode];
+
   return (
     <div className="h-screen w-screen max-h-screen bg-none overflow-hidden">
       <div className="h-screen w-screen z-0">
@@ -16,52 +43,52 @@ export default function Background() {
         >
           <defs>
             <radialGradient id="rg0" fx="0.37646022831616793" fy="0.5">
-              <stop offset="0%" stopColor="#5135FF"></stop>
-              <stop offset="100%" stopColor="#5135FF" stopOpacity="0"></stop>
+              <stop offset="0%" stopColor={p.rg0}></stop>
+              <stop offset="100%" stopColor={p.rg0} stopOpacity="0"></stop>
             </radialGradient>
-            <radialGradient id="rg0" fx="0.393291713805934" fy="0.5">
-              <stop offset="0%" stopColor="#5135FF"></stop>
-              <stop offset="100%" stopColor="#5135FF" stopOpacity="0"></stop>
+            <radialGradient id="rg0b" fx="0.393291713805934" fy="0.5">
+              <stop offset="0%" stopColor={p.rg0}></stop>
+              <stop offset="100%" stopColor={p.rg0} stopOpacity="0"></stop>
             </radialGradient>
-            <radialGradient id="rg0" fx="0.31517316157563" fy="0.5">
-              <stop offset="0%" stopColor="#5135FF"></stop>
-              <stop offset="100%" stopColor="#5135FF" stopOpacity="0"></stop>
+            <radialGradient id="rg0c" fx="0.31517316157563" fy="0.5">
+              <stop offset="0%" stopColor={p.rg0}></stop>
+              <stop offset="100%" stopColor={p.rg0} stopOpacity="0"></stop>
             </radialGradient>
             <radialGradient id="rg1" fx="0.32669490037131604" fy="0.5">
-              <stop offset="0%" stopColor="#FF5828"></stop>
-              <stop offset="100%" stopColor="#FF5828" stopOpacity="0"></stop>
+              <stop offset="0%" stopColor={p.rg1}></stop>
+              <stop offset="100%" stopColor={p.rg1} stopOpacity="0"></stop>
             </radialGradient>
-            <radialGradient id="rg1" fx="0.3807465991105353" fy="0.5">
-              <stop offset="0%" stopColor="#FF5828"></stop>
-              <stop offset="100%" stopColor="#FF5828" stopOpacity="0"></stop>
+            <radialGradient id="rg1b" fx="0.3807465991105353" fy="0.5">
+              <stop offset="0%" stopColor={p.rg1}></stop>
+              <stop offset="100%" stopColor={p.rg1} stopOpacity="0"></stop>
             </radialGradient>
-            <radialGradient id="rg1" fx="0.31895827923015674" fy="0.5">
-              <stop offset="0%" stopColor="#FF5828"></stop>
-              <stop offset="100%" stopColor="#FF5828" stopOpacity="0"></stop>
+            <radialGradient id="rg1c" fx="0.31895827923015674" fy="0.5">
+              <stop offset="0%" stopColor={p.rg1}></stop>
+              <stop offset="100%" stopColor={p.rg1} stopOpacity="0"></stop>
             </radialGradient>
             <radialGradient id="rg2" fx="0.3861793414981388" fy="0.5">
-              <stop offset="0%" stopColor="#F69CFF"></stop>
-              <stop offset="100%" stopColor="#F69CFF" stopOpacity="0"></stop>
+              <stop offset="0%" stopColor={p.rg2}></stop>
+              <stop offset="100%" stopColor={p.rg2} stopOpacity="0"></stop>
             </radialGradient>
-            <radialGradient id="rg2" fx="0.3725387255494849" fy="0.5">
-              <stop offset="0%" stopColor="#F69CFF"></stop>
-              <stop offset="100%" stopColor="#F69CFF" stopOpacity="0"></stop>
+            <radialGradient id="rg2b" fx="0.3725387255494849" fy="0.5">
+              <stop offset="0%" stopColor={p.rg2}></stop>
+              <stop offset="100%" stopColor={p.rg2} stopOpacity="0"></stop>
             </radialGradient>
-            <radialGradient id="rg2" fx="0.3301846999866811" fy="0.5">
-              <stop offset="0%" stopColor="#F69CFF"></stop>
-              <stop offset="100%" stopColor="#F69CFF" stopOpacity="0"></stop>
+            <radialGradient id="rg2c" fx="0.3301846999866811" fy="0.5">
+              <stop offset="0%" stopColor={p.rg2}></stop>
+              <stop offset="100%" stopColor={p.rg2} stopOpacity="0"></stop>
             </radialGradient>
             <radialGradient id="rg3" fx="0.3517614655409918" fy="0.5">
-              <stop offset="0%" stopColor="#FFA50F"></stop>
-              <stop offset="100%" stopColor="#FFA50F" stopOpacity="0"></stop>
+              <stop offset="0%" stopColor={p.rg3}></stop>
+              <stop offset="100%" stopColor={p.rg3} stopOpacity="0"></stop>
             </radialGradient>
-            <radialGradient id="rg3" fx="0.3853574404151021" fy="0.5">
-              <stop offset="0%" stopColor="#FFA50F"></stop>
-              <stop offset="100%" stopColor="#FFA50F" stopOpacity="0"></stop>
+            <radialGradient id="rg3b" fx="0.3853574404151021" fy="0.5">
+              <stop offset="0%" stopColor={p.rg3}></stop>
+              <stop offset="100%" stopColor={p.rg3} stopOpacity="0"></stop>
             </radialGradient>
-            <radialGradient id="rg3" fx="0.30892663341287047" fy="0.5">
-              <stop offset="0%" stopColor="#FFA50F"></stop>
-              <stop offset="100%" stopColor="#FFA50F" stopOpacity="0"></stop>
+            <radialGradient id="rg3c" fx="0.30892663341287047" fy="0.5">
+              <stop offset="0%" stopColor={p.rg3}></stop>
+              <stop offset="100%" stopColor={p.rg3} stopOpacity="0"></stop>
             </radialGradient>
           </defs>
           <rect id="bg" x="0" y="0" width="100%" height="100%"></rect>
@@ -168,18 +195,16 @@ export default function Background() {
       <div className="fixed z-20 w-screen h-screen flex justify-center items-center"></div>
       <style jsx global>{`
         #bg {
-          fill: #5135ff;
+          fill: ${p.bg};
         }
         .rect0 {
           fill: url(#rg0);
-          
         }
         .rect1 {
           fill: url(#rg1);
         }
         .rect2 {
           fill: url(#rg2);
-          
         }
         .rect3 {
           fill: url(#rg3);
@@ -201,7 +226,7 @@ export default function Background() {
 
         .pulse2 {
           animation-name: pulse2;
-          animation-duration: 1s;
+          animation-duration: 40s;
           animation-direction: alternate;
           animation-iteration-count: infinite;
         }
@@ -212,7 +237,7 @@ export default function Background() {
             skewX(95deg) skewX(205deg)  rotate(400deg);
           }
         }
-        
+
 
         .pulse3 {
           animation-name: pulse3;
@@ -242,11 +267,11 @@ export default function Background() {
 
         @keyframes rotateHue {
           from {
-            filter: hue-rotate(0deg) saturate(150%) blur(4px);
+            filter: hue-rotate(${p.hueFrom}deg) saturate(${p.saturate}%) blur(${p.blur}px);
           }
 
           to {
-            filter: hue-rotate(-120deg) saturate(150%) blur(4px);
+            filter: hue-rotate(${p.hueTo}deg) saturate(${p.saturate}%) blur(${p.blur}px);
           }
         }
       `}</style>

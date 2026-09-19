@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,12 +14,88 @@
   }
 }
 
+// Self-hosted Geist fonts (SIL OFL, from the `geist` npm package) for light mode.
+@font-face {
+  font-family: "Geist Sans";
+  src: url("/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Pixel Square";
+  src: url("/fonts/GeistPixel-Square.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Self-hosted dark-mode fonts (SIL OFL, from Google Fonts) - fetched directly
+// as static files since next/font/google's generated @font-face never made it
+// into the client bundle for this Next.js/Node setup.
+@font-face {
+  font-family: "UnifrakturMaguntia";
+  src: url("/fonts/UnifrakturMaguntia-Regular400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/CormorantGaramond-Regular400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/CormorantGaramond-Italic400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --font-title-dark: "UnifrakturMaguntia", serif;
+  --font-body-dark: "Cormorant Garamond", serif;
+  --font-title-light: "Geist Pixel Square", monospace;
+  --font-body-light: "Geist Sans", sans-serif;
+}
+
+html[data-theme="light"] {
+  --bg-color: #fdfbff;
+  --bg-color-alt: #f6d6e3;
+  --text-color: #3a3454;
+  --text-color-muted: #6b6489;
+  --accent: #8b8ee0;
+  --title-font: var(--font-title-light);
+  --body-font: var(--font-body-light);
+  --selection-bg: #c2c5f5;
+  --selection-fg: #3a3454;
+}
+
+html[data-theme="dark"] {
+  --bg-color: #08070b;
+  --bg-color-alt: #1c1024;
+  --text-color: #e7def0;
+  --text-color-muted: #a698b3;
+  --accent: #c81e4a;
+  --title-font: var(--font-title-dark);
+  --body-font: var(--font-body-dark);
+  --selection-bg: #7a1030;
+  --selection-fg: #e7def0;
+}
+
 html {
-  background-color: #abb996;
-  font-family: "Bricolage Grotesque", sans-serif;
+  background-color: var(--bg-color);
+  font-family: var(--body-font);
   font-optical-sizing: auto;
-  color: #f2f8e9;
+  color: var(--text-color);
   font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   @media (min-width: theme('screens.sm')) {
     font-size: 14px;
@@ -42,13 +115,13 @@ html {
 }
 
 ::-moz-selection {
-  background: #afbf34;
-  color: #3e402d;
+  background: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 ::selection {
-  background: #afbf34;
-  color: #3e402d;
+  background: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 body {
@@ -65,10 +138,33 @@ body {
 
 hr {
   @apply my-5;
+  border-color: var(--bg-color-alt);
 }
 
 @include headings {
   @apply my-5;
+  color: var(--text-color);
+}
+
+.font-title {
+  font-family: var(--title-font);
+}
+
+.font-body {
+  font-family: var(--body-font);
+}
+
+html[data-theme="dark"] {
+  .font-title {
+    letter-spacing: 0.03em;
+    text-shadow: 0 0 18px rgba(200, 30, 74, 0.35);
+  }
+}
+
+html[data-theme="light"] {
+  .font-title {
+    letter-spacing: 0.02em;
+  }
 }
 
 h1 {
@@ -97,41 +193,5 @@ h5 {
 
 a {
   @apply tracking-wider;
-}
-
-p {
-  @apply text-base font-light py-5 tracking-tight leading-relaxed;
-}
-
-.fade-bg {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.7077205882352942) 41%,
-      rgba(0, 0, 0, 0.5284488795518207) 64%,
-      rgba(0, 0, 0, 0) 100%);
-}
-
-.competency-list {
-  background-color: #f3ffe0;
-  color: #074020
-}
-
-/* Custom scrollbar styling for modal content */
-.overflow-y-auto::-webkit-scrollbar {
-  width: 8px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
+  color: var(--accent);
 }
