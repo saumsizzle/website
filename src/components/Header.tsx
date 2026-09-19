@@ -1,12 +1,12 @@
 import { AppBar, Button, IconButton, Toolbar } from "@mui/material";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import classNames from "classnames";
 import css from "styled-jsx/css";
 import { useThemeMode } from "@/contexts/ThemeModeContext";
+import Logo from "./Logo";
 
 function Header({ position }: any) {
   const router = useRouter();
@@ -16,14 +16,7 @@ function Header({ position }: any) {
   return (
     <AppBar position={position || "fixed"} variant="elevation" color="primary">
       <Toolbar variant="dense">
-        <Image
-          onClick={() => router.push("/")}
-          className={classNames("cursor-pointer", { invert: mode === "light" })}
-          src="/images/logo.svg"
-          alt="SD"
-          height={148}
-          width={148}
-        />
+        <Logo className="cursor-pointer" onClick={() => router.push("/")} />
         <div className="w-full flex flex-row justify-evenly max-w-sm mx-auto">
           <Link href="/">
             <Button

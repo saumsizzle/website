@@ -87,7 +87,15 @@ export function getMuiTheme(mode: ThemeMode) {
         styleOverrides: {
           colorPrimary: {
             backgroundColor: p.bg,
+            color: p.titleColor,
             borderBottom: `1px solid ${p.bgAlt}`,
+          },
+        },
+      },
+      MuiIconButton: {
+        styleOverrides: {
+          root: {
+            color: p.titleColor,
           },
         },
       },
