@@ -22,7 +22,7 @@ function Layout({ children, headerPosition, className }: LayoutProps) {
       className={` h-full w-full overflow-x-hidden justify-center ${className}`}
     >
       <NextNprogress
-        color={mode === "light" ? "#8b8ee0" : "#c81e4a"}
+        color={mode === "light" ? "#6f8fc9" : "#dc322f"}
         startPosition={0.3}
         stopDelayMs={200}
         height={3}

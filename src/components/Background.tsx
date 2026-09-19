@@ -2,25 +2,25 @@ import { useThemeMode } from "@/contexts/ThemeModeContext";
 
 const palettes = {
   light: {
-    bg: "#fdfbff",
-    rg0: "#c9b6f5", // lavender
-    rg1: "#aeb2ec", // periwinkle
-    rg2: "#f6d6e3", // blush
-    rg3: "#dff0ff", // pale sky
+    bg: "#d8ebe6", // mint-mist, keycap-inspired base
+    rg0: "#f2b8c6", // dusty pink
+    rg1: "#a9cfe0", // powder blue
+    rg2: "#a8d8c9", // sage mint
+    rg3: "#c9c2e8", // lavender
     hueFrom: 0,
-    hueTo: -25,
-    saturate: 110,
-    blur: 32,
+    hueTo: -18,
+    saturate: 105,
+    blur: 34,
   },
   dark: {
-    bg: "#08070b",
-    rg0: "#7a1030", // blood
-    rg1: "#3a0ca3", // deep plum-violet
-    rg2: "#4a0e1f", // dried blood
-    rg3: "#160a1f", // near-black plum
+    bg: "#021b20", // solarized-dark-inspired void
+    rg0: "#6b1410", // dried blood
+    rg1: "#073642", // solarized base02 teal
+    rg2: "#5c2a10", // ember orange, dim
+    rg3: "#012026", // near-black teal
     hueFrom: 0,
-    hueTo: -15,
-    saturate: 130,
+    hueTo: -12,
+    saturate: 115,
     blur: 36,
   },
 };

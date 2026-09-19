@@ -1,29 +1,31 @@
 import { createTheme } from "@mui/material";
 import type { ThemeMode } from "@/contexts/ThemeModeContext";
 
-const titleFontDark = '"UnifrakturMaguntia", serif';
+const titleFontDark = '"Death Note", serif';
 const bodyFontDark = '"Cormorant Garamond", serif';
 const titleFontLight = '"Geist Pixel Square", monospace';
 const bodyFontLight = '"Geist Sans", sans-serif';
 
 const palettes = {
   dark: {
-    bg: "#08070b",
-    bgAlt: "#1c1024",
-    text: "#e7def0",
-    textMuted: "#a698b3",
-    accent: "#7a1030",
-    accentBright: "#c81e4a",
+    bg: "#021b20",
+    bgAlt: "#073642",
+    text: "#93a1a1",
+    textMuted: "#586e75",
+    titleColor: "#eee8d5",
+    accent: "#dc322f",
+    accentBright: "#cb4b16",
     titleFont: titleFontDark,
     bodyFont: bodyFontDark,
   },
   light: {
-    bg: "#fdfbff",
-    bgAlt: "#e6defb",
+    bg: "#d8ebe6",
+    bgAlt: "#f6d2d9",
     text: "#3a3454",
     textMuted: "#6b6489",
-    accent: "#c2c5f5",
-    accentBright: "#8b8ee0",
+    titleColor: "#3a3454",
+    accent: "#a9cfe0",
+    accentBright: "#6f8fc9",
     titleFont: titleFontLight,
     bodyFont: bodyFontLight,
   },
@@ -65,12 +67,12 @@ export function getMuiTheme(mode: ThemeMode) {
         fontWeight: 400,
         lineHeight: "2rem",
       },
-      h1: { fontFamily: p.titleFont },
-      h2: { fontFamily: p.titleFont },
-      h3: { fontFamily: p.titleFont },
-      h4: { fontFamily: p.titleFont },
-      h5: { fontFamily: p.titleFont },
-      h6: { fontFamily: p.titleFont },
+      h1: { fontFamily: p.titleFont, color: p.titleColor },
+      h2: { fontFamily: p.titleFont, color: p.titleColor },
+      h3: { fontFamily: p.titleFont, color: p.titleColor },
+      h4: { fontFamily: p.titleFont, color: p.titleColor },
+      h5: { fontFamily: p.titleFont, color: p.titleColor },
+      h6: { fontFamily: p.titleFont, color: p.titleColor },
     },
 
     components: {
@@ -93,6 +95,7 @@ export function getMuiTheme(mode: ThemeMode) {
         styleOverrides: {
           root: {
             fontFamily: p.titleFont,
+            color: p.titleColor,
           },
         },
       },
@@ -103,7 +106,7 @@ export function getMuiTheme(mode: ThemeMode) {
             fontSize: "0.7rem",
             fontFamily: p.titleFont,
             fontWeight: 300,
-            color: p.text,
+            color: p.titleColor,
           },
           root: {
             cursor: "pointer !important",
@@ -111,7 +114,7 @@ export function getMuiTheme(mode: ThemeMode) {
             fontFamily: p.titleFont,
             fontWeight: 600,
             letterSpacing: 1,
-            color: p.text,
+            color: p.titleColor,
           },
         },
       },

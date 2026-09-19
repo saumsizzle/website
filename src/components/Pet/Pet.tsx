@@ -120,9 +120,9 @@ export default function Pet() {
           <div
             className="font-title absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-3 py-1 text-xs shadow-md"
             style={{
-              background: mode === "light" ? "#fdfbff" : "#1c1024",
-              color: mode === "light" ? "#3a3454" : "#e7def0",
-              border: `1px solid ${mode === "light" ? "#c2c5f5" : "#7a1030"}`,
+              background: mode === "light" ? "#f6d2d9" : "#073642",
+              color: mode === "light" ? "#3a3454" : "#eee8d5",
+              border: `1px solid ${mode === "light" ? "#a9cfe0" : "#dc322f"}`,
             }}
           >
             {bubble}

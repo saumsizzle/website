@@ -27,21 +27,25 @@ module.exports = {
           900: "#3c366b",
         },
 
-        // Light mode: cute pastels - lavender, periwinkle, cream
-        lavender: "#e6defb",
-        periwinkle: "#c2c5f5",
-        "periwinkle-deep": "#8b8ee0",
-        cream: "#fdfbff",
-        blush: "#f6d6e3",
+        // Light mode: pastel keycap palette - dusty pink, sage mint, powder blue, lavender
+        "mint-mist": "#d8ebe6",
+        "sage-mint": "#a8d8c9",
+        "powder-blue": "#a9cfe0",
+        "dusty-pink": "#f2b8c6",
+        "pink-card": "#f6d2d9",
+        lavender: "#c9c2e8",
+        cream: "#f2ecdf",
         "ink-light": "#3a3454",
 
-        // Dark mode: truly dark, gothic gremlin palette
-        void: "#08070b",
-        "void-deep": "#020103",
-        plum: "#1c1024",
-        blood: "#7a1030",
-        "blood-bright": "#c81e4a",
-        "ink-dark": "#e7def0",
+        // Dark mode: solarized-dark-inspired eeriness
+        "solarized-void": "#021b20",
+        "solarized-base03": "#002b36",
+        "solarized-base02": "#073642",
+        "solarized-base01": "#586e75",
+        "solarized-base1": "#93a1a1",
+        "solarized-red": "#dc322f",
+        "solarized-orange": "#cb4b16",
+        "ink-dark": "#eee8d5",
       },
       fontFamily: {
         "dark-title": ["var(--font-title-dark)", "serif"],

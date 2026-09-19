@@ -31,12 +31,12 @@
   font-display: swap;
 }
 
-// Self-hosted dark-mode fonts (SIL OFL, from Google Fonts) - fetched directly
-// as static files since next/font/google's generated @font-face never made it
-// into the client bundle for this Next.js/Node setup.
+// Self-hosted dark-mode fonts - fetched/uploaded directly as static files
+// since next/font/google's generated @font-face never made it into the
+// client bundle for this Next.js/Node setup.
 @font-face {
-  font-family: "UnifrakturMaguntia";
-  src: url("/fonts/UnifrakturMaguntia-Regular400.woff2") format("woff2");
+  font-family: "Death Note";
+  src: url("/fonts/DeathNote-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -59,34 +59,34 @@
 }
 
 :root {
-  --font-title-dark: "UnifrakturMaguntia", serif;
+  --font-title-dark: "Death Note", serif;
   --font-body-dark: "Cormorant Garamond", serif;
   --font-title-light: "Geist Pixel Square", monospace;
   --font-body-light: "Geist Sans", sans-serif;
 }
 
 html[data-theme="light"] {
-  --bg-color: #fdfbff;
-  --bg-color-alt: #f6d6e3;
+  --bg-color: #d8ebe6;
+  --bg-color-alt: #f6d2d9;
   --text-color: #3a3454;
   --text-color-muted: #6b6489;
-  --accent: #8b8ee0;
+  --accent: #6f8fc9;
   --title-font: var(--font-title-light);
   --body-font: var(--font-body-light);
-  --selection-bg: #c2c5f5;
+  --selection-bg: #a9cfe0;
   --selection-fg: #3a3454;
 }
 
 html[data-theme="dark"] {
-  --bg-color: #08070b;
-  --bg-color-alt: #1c1024;
-  --text-color: #e7def0;
-  --text-color-muted: #a698b3;
-  --accent: #c81e4a;
+  --bg-color: #021b20;
+  --bg-color-alt: #073642;
+  --text-color: #93a1a1;
+  --text-color-muted: #586e75;
+  --accent: #dc322f;
   --title-font: var(--font-title-dark);
   --body-font: var(--font-body-dark);
-  --selection-bg: #7a1030;
-  --selection-fg: #e7def0;
+  --selection-bg: #cb4b16;
+  --selection-fg: #eee8d5;
 }
 
 html {
@@ -157,7 +157,12 @@ hr {
 html[data-theme="dark"] {
   .font-title {
     letter-spacing: 0.03em;
-    text-shadow: 0 0 18px rgba(200, 30, 74, 0.35);
+    color: #eee8d5;
+    text-shadow: 0 0 18px rgba(220, 50, 47, 0.4);
+  }
+
+  @include headings {
+    color: #eee8d5;
   }
 }
 
