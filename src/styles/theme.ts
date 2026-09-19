@@ -38,10 +38,10 @@ export function getMuiTheme(mode: ThemeMode) {
     palette: {
       mode,
       primary: {
-        light: p.bgAlt,
-        main: p.bgAlt,
-        dark: p.bg,
-        contrastText: p.text,
+        light: p.accent,
+        main: p.accentBright,
+        dark: p.accentBright,
+        contrastText: p.bg,
       },
       secondary: {
         light: p.accentBright,
