@@ -75,6 +75,10 @@ html[data-theme="light"] {
   --body-font: var(--font-body-light);
   --selection-bg: #a9cfe0;
   --selection-fg: #3a3454;
+  --foliage: #6fae8f;
+  --foliage-dark: #4f8a70;
+  --foliage-light: #a8d8c9;
+  --eye-sclera: #fdfbff;
 }
 
 html[data-theme="dark"] {
@@ -87,6 +91,10 @@ html[data-theme="dark"] {
   --body-font: var(--font-body-dark);
   --selection-bg: #cb4b16;
   --selection-fg: #eee8d5;
+  --foliage: #1f4a3f;
+  --foliage-dark: #0d2b28;
+  --foliage-light: #3a6b57;
+  --eye-sclera: #d8d2c0;
 }
 
 html {

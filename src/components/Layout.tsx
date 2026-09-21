@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Background from "./Background";
 import Pet from "./Pet/Pet";
+import MonsterGarden from "./decor/MonsterGarden";
 import { useThemeMode } from "@/contexts/ThemeModeContext";
 
 interface LayoutProps {
@@ -35,6 +36,7 @@ function Layout({ children, headerPosition, className }: LayoutProps) {
         </motion.div>
       </AnimatePresence>
       <Pet />
+      <MonsterGarden />
     </div>
   );
 }

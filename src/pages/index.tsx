@@ -7,6 +7,7 @@ import Services from "@/components/Services";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from '@mui/material/Button';
 import Head from "next/head";
+import EyeballBloom from "@/components/decor/EyeballBloom";
 
 export function Home() {
   return (
@@ -14,7 +15,13 @@ export function Home() {
       <Head>
         <title>Saumya Dalal - Personal Website and more</title>
       </Head>
-      <div className="w-full min-h-screen flex justify-center items-center flex-col">
+      <div className="relative w-full min-h-screen flex justify-center items-center flex-col">
+        <EyeballBloom
+          size={40}
+          delay="2s"
+          className="hidden sm:block"
+          style={{ position: "absolute", top: 90, right: 24 }}
+        />
         <AnimatePresence mode={"wait"}>
           <motion.div
             className="max-w-2xl"
@@ -61,7 +68,13 @@ export function Home() {
         </div>
       </div> */}
 
-      <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10 pb-16">
+      <div className="relative w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10 pb-16">
+        <EyeballBloom
+          size={36}
+          delay="4s"
+          className="hidden sm:block"
+          style={{ position: "absolute", bottom: 16, left: -8 }}
+        />
         <ExperienceTimeline />
       </div>
 
