@@ -108,3 +108,19 @@
 @media (prefers-reduced-motion: reduce) { .site * { transition: none !important; } }
 
 .archiveLink { display: inline-block; margin-top: 24px; text-decoration: underline; }
+
+.paper {
+  background-image: url("/portfolio-assets/about-paper.webp");
+  background-size: 1200px auto;
+  background-position: top center;
+}
+.painting {
+  max-width: 720px;
+  margin: 32px 0 0;
+  padding: clamp(8px, 1.6vw, 16px);
+  background-color: #fffaf2;
+  border: 1px solid #c8baaa;
+  box-shadow: 0 3px 12px #30251412;
+}
+.painting img { display: block; width: 100%; height: auto; }
+.painting figcaption { margin-top: 12px; color: var(--muted); font: 12px/1.5 var(--mono); }
