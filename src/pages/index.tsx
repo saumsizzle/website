@@ -122,7 +122,7 @@ function PortfolioPage({ id }: { id: string }) {
             width="1600"
             height="1043"
           />
-          <figcaption>A world I painted.</figcaption>
+          <figcaption>sd 2023</figcaption>
         </figure>
       </>
     );
