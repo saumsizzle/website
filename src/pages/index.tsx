@@ -115,13 +115,15 @@ function PortfolioPage({ id }: { id: string }) {
           <p><a href="mailto:saumyacdalal@gmail.com">Email me</a> · <a href="https://www.linkedin.com/in/saumyadalal/">LinkedIn</a> · <a href="https://github.com/saumsizzle">GitHub</a></p>
         </div>
         <figure className={styles.painting}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/portfolio-assets/painted-garden.webp"
-            alt="A painted garden with wide-eyed plants and creatures beneath a pink sky and yellow sun"
-            width="1600"
-            height="1043"
-          />
+          <div className={styles.paintingImage}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/portfolio-assets/painted-garden.webp"
+              alt="A painted garden with wide-eyed plants and creatures beneath a pink sky and yellow sun"
+              width="1600"
+              height="1043"
+            />
+          </div>
           <figcaption>sd 2023</figcaption>
         </figure>
       </>
@@ -195,7 +197,7 @@ export default function Home() {
   }
 
   return (
-    <section className={id === "about" ? `${styles.site} ${styles.paper}` : styles.site} onClick={navigate}>
+    <section className={styles.site} onClick={navigate}>
       <Head>
         <title>{id === "home" ? "Saumya Dalal · A few paths through my work" : `${labels[id]} · Saumya Dalal`}</title>
         <meta name="description" content="Follow a question through Saumya Dalal’s work in product, research, and engineering." />
