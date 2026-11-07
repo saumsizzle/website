@@ -1,90 +1,231 @@
-import ContactDetails from "@/components/ContactDetails";
-import Experience from "@/components/Experience";
-import ExperienceTimeline from "@/components/ExperienceTimeline";
-import Logos from "@/components/Logos";
-import Layout from "@/components/Layout";
-import Services from "@/components/Services";
-import { AnimatePresence, motion } from "framer-motion";
-import Button from '@mui/material/Button';
 import Head from "next/head";
+import { useEffect, useRef, useState } from "react";
+import type { MouseEvent } from "react";
+import { stories, topics } from "@/portfolio";
+import styles from "@/styles/Portfolio.module.css";
 
-export function Home() {
+const sections = { home: "Start", index: "All work", writing: "Writing", about: "About" };
+const roots = Object.keys(topics);
+const labels: Record<string, string> = { ...sections };
+for (const [id, topic] of Object.entries(topics)) labels[id] = topic.name;
+for (const [id, story] of Object.entries(stories)) labels[id] = story.name;
+
+type Stop = [id: string, title: string, note: string];
+const homeStops: Stop[] = roots.map(id => [id, topics[id].name, topics[id].hint]);
+const workStops: Stop[] = Object.entries(stories)
+  .filter(([, story]) => story.role !== "Essay")
+  .map(([id, story]) => [id, story.name, `${story.role} · ${story.period}`]);
+
+function hasRoute(id: string) {
+  return Object.prototype.hasOwnProperty.call(labels, id);
+}
+
+function readTrail(): string[] {
+  const hash = window.location.hash.slice(1);
+  const id = hasRoute(hash) ? hash : "home";
+  const saved = window.history.state?.portfolioTrail;
+  if (Array.isArray(saved) && saved[0] === "home" && saved.at(-1) === id &&
+      saved.every(key => typeof key === "string" && hasRoute(key))) {
+    return saved;
+  }
+  if (id === "home") return ["home"];
+  return stories[id] ? ["home", stories[id].topic, id] : ["home", id];
+}
+
+function Stops({ stops }: { stops: Stop[] }) {
   return (
-    <Layout className="px-8">
-      <Head>
-        <title>Saumya Dalal - Personal Website and more</title>
-      </Head>
-      <div className="w-full min-h-screen flex justify-center items-center flex-col">
-        <AnimatePresence mode={"wait"}>
-          <motion.div
-            className="max-w-2xl"
-            variants={container}
-            initial="hidden"
-            animate="show"
-          >
-            <motion.div variants={item}>
-              <h1>
-                Hi!{" "}
-                <b className="whitespace-nowrap">
-                  <span className="font-normal">{"I'm"}</span> Saumya
-                </b>
-                . <br /> I'm a fullstack product leader who has built and grown software that has helped millions of users and made billions of dollars.<br />
-                I'm currently building <a href="https://www.curiousbutadhd.com" target="_blank" className="tracking-normal"><i>FringeThink</i></a>.
-              </h1>
-            </motion.div>
-            <motion.div
-              className="w-full flex flex-row justify-between mt-12"
-              variants={item}
-            >
-              <ContactDetails />
-            </motion.div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
-      <Logos />
-      <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
-        <h3>
-          Over the last 8 years, {"I've"} been fortunate enough to work across
-          several industries in tech and build products at the world's best companies.
-          I have helped these companies with:
-        </h3>
-        <Services />
-      </div>
-      {/* <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10">
-        <h3>
-          Over the last 8 years, {"I've"} been fortunate enough to work across
-          several industries in tech and build products at the world's best companies.
-        </h3>
-        <div className="w-full grid lg:grid-cols-3 gap-4 grid-cols-2">
-          <Experience />
-        </div>
-      </div> */}
-
-      <div className="w-full min-h-screen flex justify-center items-center flex-col max-w-2xl mx-auto gap-10 pb-16">
-        <ExperienceTimeline />
-      </div>
-
-      <div className="hidden fixed bottom-0 right-0 p-8">
-        <Button color="secondary" variant="contained" size="large"
-          onClick={() => { window.open('https://calendly.com/saumyadalal', '_blank')?.focus(); }}>
-          Schedule time with me
-        </Button>
-      </div>
-
-    </Layout >
+    <ul className={styles.stops}>
+      {stops.map(([id, title, note], index) => (
+        <li className={styles.stop} key={id}>
+          <a href={`#${id}`}>
+            <span className={styles.number} aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <span><strong>{title}</strong><small>{note}</small></span>
+            <span className={styles.arrow} aria-hidden="true">↗</span>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
+function Ink({ mark }: { mark: "inkSlash" | "inkBloom" | "inkStreak" }) {
+  return <span className={`${styles.inkMark} ${styles[mark]}`} aria-hidden="true" />;
+}
 
-const item = { hidden: { opacity: 0 }, show: { opacity: 1 } };
+function PortfolioPage({ id }: { id: string }) {
+  const topic = topics[id];
+  const story = stories[id];
 
-export default Home;
+  if (topic) {
+    return (
+      <>
+        <div className={styles.eyebrow}>Route {String(roots.indexOf(id) + 1).padStart(2, "0")}</div>
+        <h1>{topic.name}</h1>
+        <Ink mark="inkStreak" />
+        <p className={styles.intro}>{topic.intro}</p>
+        <Stops stops={topic.stops.map(([key, title]) => [key, title, stories[key].name])} />
+      </>
+    );
+  }
+
+  if (story) {
+    return (
+      <>
+        <article aria-labelledby="story-title">
+          <div className={styles.eyebrow}>{story.byline ? "Writing" : story.name}</div>
+          <h1 id="story-title">{story.title}</h1>
+          <p className={styles.metadata}>{story.byline ?? `${story.role} · ${story.period}`}</p>
+          <div className={styles.story}>{story.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+        </article>
+        <div className={styles.nextTitle}>Keep following the thread</div>
+        <Stops stops={story.next.map(([key, title]) => [key, title, stories[key].name])} />
+      </>
+    );
+  }
+
+  if (id === "index") {
+    return (
+      <>
+        <div className={styles.eyebrow}>The index</div>
+        <h1>Selected work</h1>
+        <Stops stops={workStops} />
+      </>
+    );
+  }
+
+  if (id === "writing") {
+    return (
+      <>
+        <div className={styles.eyebrow}>The notebook</div>
+        <h1>Writing</h1>
+        <Stops stops={[["friendships", stories.friendships.name, "Essay · 2024"]]} />
+        <a className={styles.archiveLink} href="/blog">All articles ↗</a>
+      </>
+    );
+  }
+
+  if (id === "about") {
+    return (
+      <>
+        <div className={styles.eyebrow}>About</div>
+        <h1>Hi, I’m Saumya.</h1>
+        <div className={styles.story}>
+          <p>I started in computer science and human–computer interaction at Carnegie Mellon. I’ve worked in engineering, product, and research, inside large organizations and as a co-founder.</p>
+          <p>At Modern Bloom, I work on tutoring tools and learning research. Away from my desk, I paint slightly odd gardens and gravitate toward plants and black cats.</p>
+          <p><a href="mailto:saumyacdalal@gmail.com">Email me</a> · <a href="https://www.linkedin.com/in/saumyadalal/">LinkedIn</a> · <a href="https://github.com/saumsizzle">GitHub</a></p>
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div className={styles.eyebrow}>A few paths through my work</div>
+      <h1>Pick a question.</h1>
+      <Ink mark="inkStreak" />
+      <p className={styles.intro}>I’m Saumya Dalal. I build products and do research, mostly around learning and technology. Here are three questions that run through my work.</p>
+      <Stops stops={homeStops} />
+    </>
+  );
+}
+
+export default function Home() {
+  const [trail, setTrail] = useState(["home"]);
+  const main = useRef<HTMLElement>(null);
+  const shouldFocus = useRef(false);
+  const id = trail[trail.length - 1];
+
+  useEffect(() => {
+    setTrail(readTrail());
+    function onHistoryChange() {
+      shouldFocus.current = true;
+      setTrail(readTrail());
+    }
+    window.addEventListener("popstate", onHistoryChange);
+    window.addEventListener("hashchange", onHistoryChange);
+    return () => {
+      window.removeEventListener("popstate", onHistoryChange);
+      window.removeEventListener("hashchange", onHistoryChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!shouldFocus.current) return;
+    shouldFocus.current = false;
+    main.current?.focus({ preventScroll: true });
+    window.scrollTo(0, 0);
+  }, [trail]);
+
+  function navigate(event: MouseEvent<HTMLElement>) {
+    if (event.defaultPrevented || event.button !== 0 ||
+        event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+
+    const link = (event.target as Element).closest<HTMLAnchorElement>('a[href^="#"]');
+    const next = link?.hash.slice(1);
+    if (!link || !next || !hasRoute(next)) return;
+    event.preventDefault();
+
+    const crumb = link.dataset.trail;
+    let nextTrail: string[];
+    if (crumb !== undefined) {
+      nextTrail = trail.slice(0, Number(crumb) + 1);
+    } else if (next === "home") {
+      nextTrail = ["home"];
+    } else if (topics[next] || Object.prototype.hasOwnProperty.call(sections, next)) {
+      nextTrail = ["home", next];
+    } else if (trail.includes(next)) {
+      nextTrail = trail.slice(0, trail.indexOf(next) + 1);
+    } else {
+      nextTrail = [...trail, next];
+    }
+
+    window.history.pushState({ portfolioTrail: nextTrail }, "", `#${next}`);
+    shouldFocus.current = true;
+    setTrail(nextTrail);
+  }
+
+  return (
+    <section className={styles.site} onClick={navigate}>
+      <Head>
+        <title>{id === "home" ? "Saumya Dalal · A few paths through my work" : `${labels[id]} · Saumya Dalal`}</title>
+        <meta name="description" content="Follow a question through Saumya Dalal’s work in product, research, and engineering." />
+      </Head>
+      <header className={`${styles.mast} ${styles.wrap}`}>
+        <a className={styles.brand} href="#home" aria-label="Saumya Dalal, home">
+          {/* Use the original lettering Saumya supplied. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/portfolio-assets/saumya-dalal-wordmark.png" alt="" width="1156" height="216" />
+          <Ink mark="inkSlash" />
+        </a>
+        <nav aria-label="Main">
+          <a href="#index">All work</a>
+          <a href="#writing">Writing</a>
+          <a href="#about">About</a>
+        </nav>
+      </header>
+      <div className={`${styles.layout} ${styles.wrap}`}>
+        <main ref={main} tabIndex={-1}><PortfolioPage id={id} /></main>
+        <aside className={styles.rail} aria-label="Explore the routes">
+          <p className={styles.railTitle}>Your route</p>
+          <ol className={styles.trail}>
+            {trail.map((key, index) => index === trail.length - 1
+              ? <li key={key} aria-current="page">{labels[key]}</li>
+              : <li key={key}><a href={`#${key}`} data-trail={index}>{labels[key]}</a></li>)}
+          </ol>
+          <p className={styles.railTitle}>Other routes</p>
+          <ul>
+            {roots.filter(key => !trail.includes(key)).map(key => (
+              <li key={key}><a href={`#${key}`}>{labels[key]}</a></li>
+            ))}
+          </ul>
+          <Ink mark="inkBloom" />
+        </aside>
+      </div>
+      <footer className={`${styles.footer} ${styles.wrap}`}>
+        <span>Mumbai, India</span>
+        <a href="mailto:saumyacdalal@gmail.com">Say hello ↗</a>
+      </footer>
+      <noscript><p className={styles.wrap}>Turn on JavaScript to explore the routes, or <a href="/blog">browse the articles</a>.</p></noscript>
+    </section>
+  );
+}
